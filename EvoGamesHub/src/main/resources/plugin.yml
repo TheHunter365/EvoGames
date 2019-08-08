@@ -1,0 +1,6 @@
+name: EvoGamesHub
+main: fr.evogames.evogameshub.EvoGamesHub
+authors: [TheHunter365, Tarkod, JoupiterHD]
+description: -[INSÉRER UNE DESCRIPTION APPROPRIÉ]-
+version: 1.0.0
+depend: [EvoGamesApi]
