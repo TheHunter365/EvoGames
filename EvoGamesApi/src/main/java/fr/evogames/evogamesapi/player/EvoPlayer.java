@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public interface EvoPlayer {
 
-    UUID getPlayerId();
+    UUID getUniqueId();
 
     int getCoins();
     int getEvoCoins();
