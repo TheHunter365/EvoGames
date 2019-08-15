@@ -8,6 +8,7 @@ import java.util.UUID;
 
 public class EvoPlayer implements fr.evogames.evogamesapi.player.EvoPlayer {
 
+
     //Needs to be filled
 
     @Override

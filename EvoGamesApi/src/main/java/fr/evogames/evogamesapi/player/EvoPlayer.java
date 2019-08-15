@@ -16,7 +16,7 @@ public interface EvoPlayer {
 
     Set<EvoGameStat> getGamesStat();
 
-    @Nullable
+    @Nullable //null and throws exception if game does'not exist
     EvoGameStat getGameStat(String gameName);
 
     //for this methods values can be negative to decrement coins/evocoins
