@@ -1,8 +1,8 @@
 package fr.evogames.evogamescore.game.waitingRoom;
 
 import fr.evogames.evogamescore.game.EvoGame;
-import fr.evogames.evogamescore.game.EvoGameStatus;
-import fr.evogames.evogamescore.game.waitingRoom.launch.LaunchRunnable;
+import fr.evogames.evogamesapi.game.status.EvoGameStatus;
+import fr.evogames.evogamescore.game.waitingRoom.launch.StartTask;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -12,11 +12,11 @@ public class WaitingRoomManager {
 
     private EvoGame evoGame;
     private WaitingRoomStatus status;
-    private LaunchRunnable launchRunnable;
+    private StartTask startTask;
 
     public WaitingRoomManager(EvoGame evoGame) {
         this.evoGame = evoGame;
-        this.launchRunnable = new LaunchRunnable(evoGame);
+        this.startTask = new StartTask(evoGame);
         this.status = WaitingRoomStatus.WAITING_PLAYER;
         Bukkit.getPluginManager().registerEvents(new WaitingRoomListener(evoGame), evoGame.getMain());
     }
@@ -38,30 +38,30 @@ public class WaitingRoomManager {
 
     public void startRunnable(){
         if(status == WaitingRoomStatus.WAITING_PLAYER) {
-            launchRunnable.enable();
+            startTask.enable();
         }
     }
 
     public void stopRunnable(){
         if(status == WaitingRoomStatus.COUNTDOWN) {
-            launchRunnable.disable();
+            startTask.disable();
         }
     }
 
     public void xpUpdate(){
         if(getStatus() == WaitingRoomStatus.COUNTDOWN) {
-            evoGame.getOnlinePlayers().forEach(player -> player.setLevel(getLaunchRunnable().getTimeLeft()));
+            evoGame.getOnlinePlayers().forEach(player -> player.setLevel(getStartTask().getTimeLeft()));
         } else {
             evoGame.getOnlinePlayers().forEach(player -> player.setLevel(0));
         }
     }
 
-    public LaunchRunnable getLaunchRunnable(){
-        return launchRunnable;
+    public StartTask getStartTask(){
+        return startTask;
     }
 
-    public void setLaunchRunnable(LaunchRunnable runnable){
-        this.launchRunnable = runnable;
+    public void setStartTask(StartTask runnable){
+        this.startTask = runnable;
     }
 
     public WaitingRoomStatus getStatus() {

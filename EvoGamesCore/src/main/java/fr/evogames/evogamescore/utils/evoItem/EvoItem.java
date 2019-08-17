@@ -1,4 +1,4 @@
-package fr.evogames.evogamescore.utils.EvoItem;
+package fr.evogames.evogamescore.utils.evoItem;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

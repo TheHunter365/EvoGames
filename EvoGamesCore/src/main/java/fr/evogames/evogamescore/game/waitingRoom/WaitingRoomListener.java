@@ -1,7 +1,7 @@
 package fr.evogames.evogamescore.game.waitingRoom;
 
 import fr.evogames.evogamescore.game.EvoGame;
-import fr.evogames.evogamescore.game.EvoGameStatus;
+import fr.evogames.evogamesapi.game.status.EvoGameStatus;
 import fr.evogames.evogamescore.game.profile.GameProfile;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

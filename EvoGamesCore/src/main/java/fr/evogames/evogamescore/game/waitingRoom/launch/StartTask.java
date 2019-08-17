@@ -8,12 +8,12 @@ import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Sound;
 import org.bukkit.scheduler.BukkitRunnable;
 
-public class LaunchRunnable extends BukkitRunnable {
+public class StartTask extends BukkitRunnable {
 
     private EvoGame evoGame;
     private int timeLeft;
 
-    public LaunchRunnable(EvoGame evoGame) {
+    public StartTask(EvoGame evoGame) {
         this.evoGame = evoGame;
         this.timeLeft = 60;
     }
@@ -54,7 +54,7 @@ public class LaunchRunnable extends BukkitRunnable {
     public void disableSilent(){
         cancel();
         evoGame.getWaitingRoomManager().setStatus(WaitingRoomStatus.WAITING_PLAYER);
-        evoGame.getWaitingRoomManager().setLaunchRunnable(new LaunchRunnable(evoGame));
+        evoGame.getWaitingRoomManager().setStartTask(new StartTask(evoGame));
     }
 
     public int getTimeLeft(){

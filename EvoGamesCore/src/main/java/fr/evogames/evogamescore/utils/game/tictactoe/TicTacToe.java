@@ -1,7 +1,7 @@
 package fr.evogames.evogamescore.utils.game.tictactoe;
 
-import fr.evogames.evogamescore.utils.EvoInventory.EvoInvItem;
-import fr.evogames.evogamescore.utils.EvoInventory.EvoInventory;
+import fr.evogames.evogamescore.utils.evoInventory.EvoInvItem;
+import fr.evogames.evogamescore.utils.evoInventory.EvoInventory;
 import org.bukkit.DyeColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;

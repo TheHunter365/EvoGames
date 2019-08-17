@@ -1,5 +1,6 @@
 package fr.evogames.evogamescore.game;
 
+import fr.evogames.evogamesapi.game.status.EvoGameStatus;
 import fr.evogames.evogamescore.game.profile.GameProfileManager;
 import fr.evogames.evogamescore.game.scenario.ScenarioManager;
 import fr.evogames.evogamescore.game.team.TeamManager;
@@ -13,7 +14,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
 
-public abstract class EvoGame {
+public abstract class EvoGame extends fr.evogames.evogamesapi.game.EvoGame {
 
     private JavaPlugin main;
     private String name;
@@ -39,7 +40,7 @@ public abstract class EvoGame {
         this.state = EvoGameStatus.WAITING;
     }
 
-    public void defaultLoad(List<Team> teamList){
+    public void defaultLoad(List<Team> teamList) {
         teamList.forEach(team -> teamManager.getTeamList().add(team));
         this.waitingRoomManager = new WaitingRoomManager(this);
         loadListener();

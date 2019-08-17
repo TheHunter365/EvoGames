@@ -1,4 +1,4 @@
-package fr.evogames.evogamescore.game;
+package fr.evogames.evogamesapi.game.status;
 
 public enum EvoGameStatus {
     WAITING,

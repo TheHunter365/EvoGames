@@ -4,7 +4,7 @@ import fr.evogames.evogamescore.game.EvoGame;
 import fr.evogames.evogamescore.game.profile.GameProfile;
 import fr.evogames.evogamescore.game.profile.gui.AdminGui;
 import fr.evogames.evogamescore.game.profile.gui.ScenarioGui;
-import fr.evogames.evogamescore.utils.EvoItem.EvoItem;
+import fr.evogames.evogamescore.utils.evoItem.EvoItem;
 import fr.evogames.evogamescore.utils.ItemBuilder;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

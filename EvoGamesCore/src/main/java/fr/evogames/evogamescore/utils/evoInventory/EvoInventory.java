@@ -1,4 +1,4 @@
-package fr.evogames.evogamescore.utils.EvoInventory;
+package fr.evogames.evogamescore.utils.evoInventory;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.HumanEntity;
@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class EvoInventory {
 

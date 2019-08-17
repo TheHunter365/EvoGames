@@ -1,4 +1,4 @@
-package fr.evogames.evogamescore.utils.EvoInventory;
+package fr.evogames.evogamescore.utils.evoInventory;
 
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
