@@ -9,6 +9,7 @@ import fr.evogames.evogamesapi.player.EvoPlayerManager;
 import fr.evogames.evogamesapi.player.EvoRankManager;
 import fr.evogames.evogamescore.database.MongoDataBase;
 import fr.evogames.evogamescore.database.RedisDataBase;
+import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class EvoGamesCore extends JavaPlugin implements EvoGamesApi {
@@ -20,6 +21,11 @@ public class EvoGamesCore extends JavaPlugin implements EvoGamesApi {
 
     @Override
     public void onEnable() {
+
+        this.getServer()
+                .getServicesManager()
+                .register(EvoGamesApi.class, this, this, ServicePriority.Highest);
+
         this.gson = new GsonBuilder()
                 .serializeNulls()
                 .create();
