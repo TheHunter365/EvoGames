@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
-public class WaitingRoomManager {
+public class WaitingRoomManager implements fr.evogames.evogamesapi.game.waitingRoom.WaitingRoomManager {
 
     private EvoGame evoGame;
     private WaitingRoomStatus status;

@@ -19,7 +19,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.UUID;
 
-public class WaitingRoomListener implements Listener {
+public class WaitingRoomListener implements Listener, fr.evogames.evogamesapi.game.waitingRoom.WaitingRoomListener {
 
     private EvoGame evoGame;
 
@@ -28,15 +28,18 @@ public class WaitingRoomListener implements Listener {
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
-    public void onJoin(PlayerJoinEvent event){
-        if(evoGame.getState() == EvoGameStatus.WAITING){
+    public void onJoin(PlayerJoinEvent event) {
+        if (evoGame.getState() == EvoGameStatus.WAITING){
             Player player = event.getPlayer();
             UUID uuid = player.getUniqueId();
             GameProfile gameProfile = evoGame.getGameProfileManager().get(uuid);
+
             evoGame.broadcast(ChatColor.GREEN + "+ " + ChatColor.YELLOW + player.getName() + " s'est connecté. " + ChatColor.RED + "(" + evoGame.getGameProfileManager().size() + "/" + evoGame.getTeamManager().getLimit() + ")");
             evoGame.getWaitingRoomManager().giveItem(player);
+
             player.teleport(new Location(Bukkit.getWorld("world"), 1002, 104, 971));
             player.setGameMode(GameMode.ADVENTURE);
+
             check();
             evoGame.getGameProfileManager().getGameProfileMap().values().forEach(gameProfiles -> WRScoreBoard.waitingPlayer(evoGame, gameProfiles));
         }
@@ -66,21 +69,21 @@ public class WaitingRoomListener implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event){
-        if(evoGame.getState() == EvoGameStatus.WAITING) {
+        if (evoGame.getState() == EvoGameStatus.WAITING) {
             event.setCancelled(true);
         }
     }
 
     @EventHandler
     public void onDrop(PlayerDropItemEvent event){
-        if(evoGame.getState() == EvoGameStatus.WAITING) {
+        if (evoGame.getState() == EvoGameStatus.WAITING) {
             event.setCancelled(true);
         }
     }
 
     @EventHandler
     public void onEntityDamage(EntityDamageByEntityEvent event){
-        if(evoGame.getState() == EvoGameStatus.WAITING) {
+        if (evoGame.getState() == EvoGameStatus.WAITING) {
             event.setCancelled(true);
         }
     }

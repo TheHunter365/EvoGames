@@ -1,10 +1,12 @@
 package fr.evogames.evogamescore.utils;
 
+import org.bukkit.entity.Player;
+
 import java.lang.reflect.Field;
 
+/*
 import org.bukkit.ChatColor;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
-import org.bukkit.entity.Player;
 
 import net.minecraft.server.v1_8_R3.IChatBaseComponent;
 import net.minecraft.server.v1_8_R3.PacketPlayOutChat;
@@ -12,6 +14,7 @@ import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerListHeaderFooter;
 import net.minecraft.server.v1_8_R3.PacketPlayOutTitle;
 import net.minecraft.server.v1_8_R3.PlayerConnection;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
+ */
 
 public class Title {
 
@@ -25,6 +28,7 @@ public class Title {
 
     public static void sendFullTitle(Player player, int fadeIn, int stay, int fadeOut, String title,
                                      String subtitle) {
+        /*
         PlayerConnection connection = ((CraftPlayer) player).getHandle().playerConnection;
         PacketPlayOutTitle packetPlayOutTimes = new PacketPlayOutTitle(PacketPlayOutTitle.EnumTitleAction.TIMES, null,
                 fadeIn, stay, fadeOut);
@@ -80,5 +84,7 @@ public class Title {
         IChatBaseComponent cbc = ChatSerializer.a("{\"text\": \"" + message + "\"}");
         PacketPlayOutChat ppoc = new PacketPlayOutChat(cbc, (byte) 2);
         ((CraftPlayer) p).getHandle().playerConnection.sendPacket(ppoc);
+
+         */
     }
 }

@@ -24,8 +24,8 @@ public class GameProfile {
         this.uuid = uuid;
         this.teamSelectorGui = new TeamSelectorGui(this, evoGame);
         this.itemLibrary = new ItemLibrary(this, evoGame);
-        this.scoreboardSign = new ScoreboardSign(getPlayer(), "Default Name");
-        scoreboardSign.create();
+        // this.scoreboardSign = new ScoreboardSign(getPlayer(), "Default Name");
+        // scoreboardSign.create();
     }
 
     public Player getPlayer(){

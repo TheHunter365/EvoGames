@@ -1,6 +1,6 @@
 package fr.evogames.evogamesapi.player;
 
-import com.sun.istack.internal.Nullable;
+// import com.sun.istack.internal.Nullable;
 
 import java.util.Set;
 import java.util.UUID;
@@ -16,7 +16,7 @@ public interface EvoPlayer {
 
     Set<EvoGameStat> getGamesStat();
 
-    @Nullable //null and throws exception if game does'not exist
+    // @Nullable //null and throws exception if game does'not exist
     EvoGameStat getGameStat(String gameName);
 
     //for this methods values can be negative to decrement coins/evocoins

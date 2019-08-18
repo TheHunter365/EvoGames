@@ -5,13 +5,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Nullable;
+// import javax.annotation.Nullable;
 
 import org.bukkit.Color;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.Utility;
-import org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack;
+// import org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -25,7 +25,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import com.google.gson.Gson;
 
-import net.minecraft.server.v1_8_R3.NBTTagCompound;
+// import net.minecraft.server.v1_8_R3.NBTTagCompound;
 
 public class ItemBuilder implements Cloneable {
 	
@@ -59,7 +59,7 @@ public class ItemBuilder implements Cloneable {
 	}
 	
 	@Deprecated
-	public ItemBuilder(final Material m, final int amount, final short damage, @Nullable final Byte data) {
+	public ItemBuilder(final Material m, final int amount, final short damage, /*@Nullable*/ final Byte data) {
 		this.stack = new ItemStack(m, amount, damage, data);
 	}
 	
@@ -301,11 +301,14 @@ public class ItemBuilder implements Cloneable {
 	}
 	
 	public String toJsonRegular() {
+		/*
 	    net.minecraft.server.v1_8_R3.ItemStack nmsItemStack = CraftItemStack.asNMSCopy(stack);
 	    NBTTagCompound compound = new NBTTagCompound();
 	    compound = nmsItemStack.save(compound);
 
 	    return compound.toString();
+		 */
+		return null;
 	}
 	
     public String toJson() {

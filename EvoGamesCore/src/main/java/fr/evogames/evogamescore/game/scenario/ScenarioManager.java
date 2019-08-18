@@ -6,7 +6,7 @@ import fr.evogames.evogamescore.game.scenario.core.Scenario;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScenarioManager {
+public class ScenarioManager implements fr.evogames.evogamesapi.game.scenario.ScenarioManager {
 
     private EvoGame evoGame;
 
