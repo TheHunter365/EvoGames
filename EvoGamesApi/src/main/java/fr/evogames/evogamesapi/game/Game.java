@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 import java.util.List;
 
-public abstract class EvoGame {
+public abstract class Game {
 
     public abstract void enable();
 

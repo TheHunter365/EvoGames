@@ -1,6 +1,6 @@
 package fr.evogames.evogamescore.game.profile;
 
-import fr.evogames.evogamescore.game.EvoGame;
+import fr.evogames.evogamescore.game.Game;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,10 +8,10 @@ import java.util.UUID;
 
 public class GameProfileManager {
 
-    private EvoGame evoGame;
+    private Game evoGame;
     private Map<UUID, GameProfile> gameProfileMap;
 
-    public GameProfileManager(EvoGame evoGame) {
+    public GameProfileManager(Game evoGame) {
         this.evoGame = evoGame;
         this.gameProfileMap = new HashMap<>();
     }

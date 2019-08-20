@@ -65,11 +65,11 @@ public class EvoInventory {
     }
 
     public void update() {
-        registerItem();
+        registerItems();
         registerEvent();
     }
 
-    private void registerItem() {
+    private void registerItems() {
         this.invItemMap.forEach((slot, item)-> inventory.setItem(slot, item.getItemStack()));
     }
 

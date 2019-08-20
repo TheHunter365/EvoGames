@@ -1,6 +1,6 @@
 package fr.evogames.evogamescore.game.waitingRoom;
 
-import fr.evogames.evogamescore.game.EvoGame;
+import fr.evogames.evogamescore.game.Game;
 import fr.evogames.evogamesapi.game.status.EvoGameStatus;
 import fr.evogames.evogamescore.game.profile.GameProfile;
 import org.bukkit.Bukkit;
@@ -21,18 +21,16 @@ import java.util.UUID;
 
 public class WaitingRoomListener implements Listener, fr.evogames.evogamesapi.game.waitingRoom.WaitingRoomListener {
 
-    private EvoGame evoGame;
+    private Game evoGame;
 
-    public WaitingRoomListener(EvoGame evoGame) {
+    public WaitingRoomListener(Game evoGame) {
         this.evoGame = evoGame;
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onJoin(PlayerJoinEvent event) {
-        if (evoGame.getState() == EvoGameStatus.WAITING){
+        if (evoGame.getState() == EvoGameStatus.WAITING) {
             Player player = event.getPlayer();
-            UUID uuid = player.getUniqueId();
-            GameProfile gameProfile = evoGame.getGameProfileManager().get(uuid);
 
             evoGame.broadcast(ChatColor.GREEN + "+ " + ChatColor.YELLOW + player.getName() + " s'est connecté. " + ChatColor.RED + "(" + evoGame.getGameProfileManager().size() + "/" + evoGame.getTeamManager().getLimit() + ")");
             evoGame.getWaitingRoomManager().giveItem(player);

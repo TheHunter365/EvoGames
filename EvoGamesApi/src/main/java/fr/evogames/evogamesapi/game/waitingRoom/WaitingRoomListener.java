@@ -17,4 +17,6 @@ public interface WaitingRoomListener {
     void onDrop(PlayerDropItemEvent event);
     void onEntityDamage(EntityDamageByEntityEvent event);
 
+    // Check the number of player to start a game
+    void check();
 }

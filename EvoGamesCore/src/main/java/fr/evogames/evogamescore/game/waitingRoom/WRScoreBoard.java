@@ -1,14 +1,12 @@
 package fr.evogames.evogamescore.game.waitingRoom;
 
 
-import fr.evogames.evogamescore.game.EvoGame;
+import fr.evogames.evogamescore.game.Game;
 import fr.evogames.evogamescore.game.profile.GameProfile;
-import fr.evogames.evogamescore.utils.ScoreboardSign;
-import org.bukkit.ChatColor;
 
 public class WRScoreBoard {
 
-    public static void waitingPlayer(EvoGame evoGame, GameProfile gameProfile){
+    public static void waitingPlayer(Game evoGame, GameProfile gameProfile){
         /*
         ScoreboardSign scoreBoard = gameProfile.getScoreboardSign();
         scoreBoard.setObjectiveName(ChatColor.GRAY + evoGame.getName());

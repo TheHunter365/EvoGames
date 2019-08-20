@@ -26,5 +26,6 @@ public class EvoGamesHub extends JavaPlugin {
 
     @Override
     public void onDisable() {
+
     }
 }

@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Team implements fr.evogames.evogamesapi.game.team.Team {
+public class Team implements fr.evogames.evogamesapi.game.team.core.Team {
 
     private TeamColor teamColor;
     private String teamName;

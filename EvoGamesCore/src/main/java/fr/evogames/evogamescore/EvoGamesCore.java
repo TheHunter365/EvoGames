@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import fr.evogames.evogamesapi.EvoGamesApi;
 import fr.evogames.evogamesapi.database.DataBase;
-import fr.evogames.evogamesapi.game.EvoGameManager;
+import fr.evogames.evogamesapi.game.GameManager;
 import fr.evogames.evogamesapi.player.EvoPlayerManager;
 import fr.evogames.evogamesapi.player.EvoRankManager;
 import fr.evogames.evogamescore.database.MongoDataBase;
@@ -41,7 +41,7 @@ public class EvoGamesCore extends JavaPlugin implements EvoGamesApi {
     }
 
     @Override
-    public EvoGameManager getEvoGamesManager() {
+    public GameManager getEvoGamesManager() {
         return null;
     }
 

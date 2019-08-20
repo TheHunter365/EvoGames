@@ -1,6 +1,6 @@
 package fr.evogames.evogamescore.game.profile.gui;
 
-import fr.evogames.evogamescore.game.EvoGame;
+import fr.evogames.evogamescore.game.Game;
 import fr.evogames.evogamescore.game.scenario.ScenarioManager;
 import fr.evogames.evogamescore.game.scenario.core.Scenario;
 import fr.evogames.evogamescore.utils.evoInventory.EvoInvItem;
@@ -11,10 +11,10 @@ import org.bukkit.inventory.ItemStack;
 
 public class ScenarioGui {
 
-    private EvoGame evoGame;
+    private Game evoGame;
     private EvoInventory evoInventory;
 
-    public ScenarioGui(EvoGame evoGame) {
+    public ScenarioGui(Game evoGame) {
         this.evoGame = evoGame;
         this.evoInventory = new EvoInventory(evoGame.getMain(), 9*3, "Sélection de scénario");
     }

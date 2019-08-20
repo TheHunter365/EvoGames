@@ -1,6 +1,6 @@
 package fr.evogames.evogamescore.game.profile.library;
 
-import fr.evogames.evogamescore.game.EvoGame;
+import fr.evogames.evogamescore.game.Game;
 import fr.evogames.evogamescore.game.profile.GameProfile;
 import fr.evogames.evogamescore.game.profile.gui.AdminGui;
 import fr.evogames.evogamescore.game.profile.gui.ScenarioGui;
@@ -17,20 +17,22 @@ import java.util.UUID;
 public class ItemLibrary {
 
     private GameProfile gameProfile;
-    private EvoGame evoGame;
+    private Game evoGame;
 
-    public ItemLibrary(GameProfile gameProfile, EvoGame evoGame) {
+    public ItemLibrary(GameProfile gameProfile, Game evoGame) {
         this.gameProfile = gameProfile;
         this.evoGame = evoGame;
     }
 
-    public EvoItem getTeamSelectorItem(){
+    public EvoItem getTeamSelectorItem() {
         ItemBuilder itemBuilder = new ItemBuilder(Material.STAINED_CLAY);
-        if(evoGame.getTeamManager().getTeam(gameProfile) != null){
+
+        if (evoGame.getTeamManager().getTeam(gameProfile) != null) {
             itemBuilder.setDyeColor(evoGame.getTeamManager().getTeam(gameProfile).getTeamColor().getDyeColor());
         } else {
             itemBuilder.setType(Material.HARD_CLAY);
         }
+
         itemBuilder.setName(ChatColor.GOLD + "Choisie une équipe !");
         return new EvoItem(itemBuilder.toItemStack(), event -> {
             Player player = event.getPlayer();

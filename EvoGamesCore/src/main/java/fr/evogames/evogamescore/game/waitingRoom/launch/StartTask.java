@@ -1,6 +1,6 @@
 package fr.evogames.evogamescore.game.waitingRoom.launch;
 
-import fr.evogames.evogamescore.game.EvoGame;
+import fr.evogames.evogamescore.game.Game;
 import fr.evogames.evogamescore.game.waitingRoom.WRScoreBoard;
 import fr.evogames.evogamescore.game.waitingRoom.WaitingRoomStatus;
 import fr.evogames.evogamescore.utils.Title;
@@ -10,10 +10,10 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class StartTask extends BukkitRunnable {
 
-    private EvoGame evoGame;
+    private Game evoGame;
     private int timeLeft;
 
-    public StartTask(EvoGame evoGame) {
+    public StartTask(Game evoGame) {
         this.evoGame = evoGame;
         this.timeLeft = 60;
     }

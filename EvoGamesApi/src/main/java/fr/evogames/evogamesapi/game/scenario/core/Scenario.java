@@ -1,6 +1,6 @@
-package fr.evogames.evogamescore.game.scenario.core;
+package fr.evogames.evogamesapi.game.scenario.core;
 
-import fr.evogames.evogamescore.game.EvoGame;
+import fr.evogames.evogamesapi.game.Game;
 import org.bukkit.Material;
 import org.bukkit.event.Listener;
 
@@ -8,10 +8,10 @@ import java.util.List;
 
 public abstract class Scenario implements Listener {
 
-    private EvoGame evoGame;
+    private Game game;
 
-    public Scenario(EvoGame evoGame) {
-        this.evoGame = evoGame;
+    public Scenario(Game game) {
+        this.game = game;
     }
 
     abstract public String getName();
@@ -20,7 +20,7 @@ public abstract class Scenario implements Listener {
     abstract public Material getMaterial();
     abstract public short getData();
 
-    public EvoGame getEvoGame() {
-        return evoGame;
+    public Game getGame() {
+        return game;
     }
 }

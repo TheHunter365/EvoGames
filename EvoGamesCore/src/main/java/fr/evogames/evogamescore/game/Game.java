@@ -14,7 +14,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
 
-public abstract class EvoGame extends fr.evogames.evogamesapi.game.EvoGame {
+public abstract class Game extends fr.evogames.evogamesapi.game.Game {
 
     private JavaPlugin main;
     private String name;
@@ -30,7 +30,7 @@ public abstract class EvoGame extends fr.evogames.evogamesapi.game.EvoGame {
     public abstract void onGameStart();
     public abstract void onGameDisable();
 
-    public EvoGame(JavaPlugin main, String name, String description) {
+    public Game(JavaPlugin main, String name, String description) {
         this.main = main;
         this.name = name;
         this.description = description;

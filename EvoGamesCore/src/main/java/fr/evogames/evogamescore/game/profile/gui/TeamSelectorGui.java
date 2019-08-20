@@ -1,6 +1,6 @@
 package fr.evogames.evogamescore.game.profile.gui;
 
-import fr.evogames.evogamescore.game.EvoGame;
+import fr.evogames.evogamescore.game.Game;
 import fr.evogames.evogamescore.game.profile.GameProfile;
 import fr.evogames.evogamescore.game.team.core.Team;
 import fr.evogames.evogamescore.utils.evoInventory.EvoInvItem;
@@ -16,13 +16,14 @@ import org.bukkit.material.Wool;
 public class TeamSelectorGui implements Listener {
 
     private EvoInventory inventory;
-    private EvoGame evoGame;
+    private Game evoGame;
     private GameProfile gameProfile;
 
-    public TeamSelectorGui(GameProfile gameProfile, EvoGame evoGame) {
+    public TeamSelectorGui(GameProfile gameProfile, Game evoGame) {
         this.inventory = new EvoInventory(evoGame.getMain(), 9, "Sélection d'équipe");
         this.evoGame = evoGame;
         this.gameProfile = gameProfile;
+
         load();
     }
 

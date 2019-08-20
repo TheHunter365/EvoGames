@@ -1,6 +1,6 @@
 package fr.evogames.evogamescore.game.team;
 
-import fr.evogames.evogamescore.game.EvoGame;
+import fr.evogames.evogamescore.game.Game;
 import fr.evogames.evogamescore.game.profile.GameProfile;
 import fr.evogames.evogamescore.game.team.core.Team;
 
@@ -9,10 +9,10 @@ import java.util.stream.Collectors;
 
 public class TeamManager {
 
-    private EvoGame evoGame;
+    private Game evoGame;
     protected List<Team> teamList;
 
-    public TeamManager(EvoGame evoGame) {
+    public TeamManager(Game evoGame) {
         this.evoGame = evoGame;
         this.teamList = new ArrayList<>();
     }

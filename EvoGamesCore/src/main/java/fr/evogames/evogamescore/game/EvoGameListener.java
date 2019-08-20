@@ -11,9 +11,9 @@ import java.util.UUID;
 
 public class EvoGameListener implements Listener {
 
-    private EvoGame evoGame;
+    private Game evoGame;
 
-    public EvoGameListener(EvoGame evoGame) {
+    public EvoGameListener(Game evoGame) {
         this.evoGame = evoGame;
     }
 

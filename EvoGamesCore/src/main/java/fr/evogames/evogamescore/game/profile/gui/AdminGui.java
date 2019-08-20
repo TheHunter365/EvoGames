@@ -1,6 +1,6 @@
 package fr.evogames.evogamescore.game.profile.gui;
 
-import fr.evogames.evogamescore.game.EvoGame;
+import fr.evogames.evogamescore.game.Game;
 import fr.evogames.evogamescore.utils.evoInventory.EvoInvItem;
 import fr.evogames.evogamescore.utils.evoInventory.EvoInventory;
 import fr.evogames.evogamescore.utils.ItemBuilder;
@@ -11,9 +11,9 @@ import org.bukkit.entity.Player;
 public class AdminGui {
 
     private EvoInventory inventory;
-    private EvoGame evoGame;
+    private Game evoGame;
 
-    public AdminGui(EvoGame evoGame) {
+    public AdminGui(Game evoGame) {
         this.evoGame = evoGame;
         this.inventory = new EvoInventory(evoGame.getMain(), 9*3, "Admin");
     }
