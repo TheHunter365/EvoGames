@@ -24,9 +24,11 @@ public class EvoInventoryListener implements Listener {
         if (item != null) {
             if (!item.getType().equals(Material.AIR)) {
                 if (event.getInventory().equals(inventory)) {
-                    Map.Entry<Integer, EvoInvItem> i = evoInventory.getInvItemMap().entrySet().stream().filter(e -> e.getValue().getItemStack().equals(item)).findFirst().orElse(null);
-                    //evoInventory.getInvItemMap().forEach((slot, it)-> it.getClickEventConsumer().accept(event));
-                    if (i != null) i.getValue().getClickEventConsumer().accept(event); //small fix
+                    Map.Entry<Integer, EvoInventoryItem> clickedInvItem = evoInventory.getInvItemMap()
+                            .entrySet().stream()
+                            .filter(invItem -> invItem.getValue().getItemStack().equals(item)).findFirst().orElse(null);
+                    // evoInventory.getInvItemMap().forEach((slot, it)-> it.getClickEventConsumer().accept(event));
+                    if (clickedInvItem != null) clickedInvItem.getValue().getClickEventConsumer().accept(event); //small fix
                     event.setCancelled(true);
                 }
             }

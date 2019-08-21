@@ -1,5 +1,6 @@
 package fr.evogames.evogamescore.utils.evoInventory;
 
+import fr.evogames.evogamesapi.utils.inventory.EvoInventoryItem;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
@@ -13,36 +14,36 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class EvoInventory {
+public class EvoInventory implements fr.evogames.evogamesapi.utils.inventory.EvoInventory {
 
     private transient JavaPlugin main;
     private transient Inventory inventory;
     private transient EvoInventoryListener oldListener;
 
     private String name;
-    private Map<Integer, EvoInvItem> invItemMap;
+    private Map<Integer, EvoInventoryItem> invItemMap = new HashMap<>();
 
     public EvoInventory(JavaPlugin main, int size, String name) {
-        this.name = name;
         this.main = main;
-        this.invItemMap = new HashMap<>();
+        this.name = name;
         this.inventory = Bukkit.createInventory(null, size, name);
+
         defaultLoad();
     }
 
     public EvoInventory(JavaPlugin main, InventoryType inventoryType, String name) {
-        this.name = name;
         this.main = main;
-        this.invItemMap = new HashMap<>();
+        this.name = name;
         this.inventory = Bukkit.createInventory(null, inventoryType, name);
+
         defaultLoad();
     }
 
     public EvoInventory(JavaPlugin main, Inventory inventory) {
-        this.name = inventory.getName();
         this.main = main;
-        this.invItemMap = new HashMap<>();
+        this.name = inventory.getName();
         this.inventory = inventory;
+
         defaultLoad();
     }
 
@@ -50,18 +51,18 @@ public class EvoInventory {
         update();
     }
 
-    public void setItem(int slot, EvoInvItem item) {
+    public void setItem(int slot, EvoInventoryItem item) {
         this.invItemMap.put(slot, item);
-        update();
-    }
-
-    public void clear(){
-        this.invItemMap.clear();
         update();
     }
 
     public void removeItem(int slot){
         this.invItemMap.remove(slot);
+    }
+
+    public void clear() {
+        this.invItemMap.clear();
+        update();
     }
 
     public void update() {
@@ -73,7 +74,7 @@ public class EvoInventory {
         this.invItemMap.forEach((slot, item)-> inventory.setItem(slot, item.getItemStack()));
     }
 
-    private void registerEvent(){
+    private void registerEvent() {
         if(oldListener != null) InventoryClickEvent.getHandlerList().unregister(oldListener);
         EvoInventoryListener event = new EvoInventoryListener(this);
         Bukkit.getServer().getPluginManager().registerEvents(
@@ -83,7 +84,7 @@ public class EvoInventory {
         oldListener = event;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         List<Player> playerList = new ArrayList<>();
         for (HumanEntity humanEntity : inventory.getViewers()) {
             if (humanEntity instanceof Player) {
@@ -100,7 +101,7 @@ public class EvoInventory {
         return name;
     }
 
-    public Map<Integer, EvoInvItem> getInvItemMap() {
+    public Map<Integer, EvoInventoryItem> getInvItemMap() {
         return invItemMap;
     }
 

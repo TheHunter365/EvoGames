@@ -3,7 +3,7 @@ package fr.evogames.evogamescore.game.profile.gui;
 import fr.evogames.evogamescore.game.Game;
 import fr.evogames.evogamescore.game.scenario.ScenarioManager;
 import fr.evogames.evogamescore.game.scenario.core.Scenario;
-import fr.evogames.evogamescore.utils.evoInventory.EvoInvItem;
+import fr.evogames.evogamescore.utils.evoInventory.EvoInventoryItem;
 import fr.evogames.evogamescore.utils.evoInventory.EvoInventory;
 import fr.evogames.evogamescore.utils.ItemBuilder;
 import org.bukkit.entity.Player;
@@ -28,7 +28,7 @@ public class ScenarioGui {
         ScenarioManager scenarioManager = evoGame.getScenarioManager();
         for (int i = 0; i < scenarioManager.getScenarioList().size(); i++) {
             Scenario scenario = scenarioManager.getScenarioList().get(i);
-            evoInventory.setItem(i, new EvoInvItem(getItem(scenario), event -> {
+            evoInventory.setItem(i, new EvoInventoryItem(getItem(scenario), event -> {
                 scenarioManager.setScenarioSelected(scenario);
                 load();
             }));

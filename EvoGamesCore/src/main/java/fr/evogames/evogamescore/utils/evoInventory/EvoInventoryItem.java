@@ -6,18 +6,17 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.function.Consumer;
 
-public class EvoInvItem {
+public class EvoInventoryItem implements fr.evogames.evogamesapi.utils.inventory.EvoInventoryItem {
 
     private ItemStack itemStack;
-
     private Consumer<InventoryClickEvent> clickEventConsumer;
 
-    public EvoInvItem(ItemStack itemStack, Consumer<InventoryClickEvent> clickEventConsumer) {
+    public EvoInventoryItem(ItemStack itemStack, Consumer<InventoryClickEvent> clickEventConsumer) {
         this.itemStack = itemStack;
         this.clickEventConsumer = clickEventConsumer;
     }
 
-    public EvoInvItem(Material material, Consumer<InventoryClickEvent> clickEventConsumer) {
+    public EvoInventoryItem(Material material, Consumer<InventoryClickEvent> clickEventConsumer) {
         this.itemStack = new ItemStack(material);
         this.clickEventConsumer = clickEventConsumer;
     }

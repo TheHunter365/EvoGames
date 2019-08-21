@@ -3,7 +3,7 @@ package fr.evogames.evogamescore.game.profile.gui;
 import fr.evogames.evogamescore.game.Game;
 import fr.evogames.evogamescore.game.profile.GameProfile;
 import fr.evogames.evogamescore.game.team.core.Team;
-import fr.evogames.evogamescore.utils.evoInventory.EvoInvItem;
+import fr.evogames.evogamescore.utils.evoInventory.EvoInventoryItem;
 import fr.evogames.evogamescore.utils.evoInventory.EvoInventory;
 import fr.evogames.evogamescore.utils.ItemBuilder;
 import org.bukkit.ChatColor;
@@ -35,7 +35,7 @@ public class TeamSelectorGui implements Listener {
     public void load(){
         for (int i = 0; i < evoGame.getTeamManager().getTeamList().size(); i++) {
             Team team = evoGame.getTeamManager().getTeamList().get(i);
-            inventory.setItem(i, new EvoInvItem(getTeamItem(team), e -> {
+            inventory.setItem(i, new EvoInventoryItem(getTeamItem(team), e -> {
                 if(e.getWhoClicked() instanceof Player){
                     Player player = (Player) e.getWhoClicked();
                     GameProfile gameProfile = evoGame.getGameProfileManager().get(player.getUniqueId());
@@ -47,7 +47,7 @@ public class TeamSelectorGui implements Listener {
                 }
                 evoGame.getGameProfileManager().getGameProfileMap().values().forEach(gameProfile -> gameProfile.getTeamSelectorGui().load());
             }));
-            inventory.setItem(inventory.getInventory().getSize() - 1, new EvoInvItem(getRandomTeamItem(), e -> {
+            inventory.setItem(inventory.getInventory().getSize() - 1, new EvoInventoryItem(getRandomTeamItem(), e -> {
                 evoGame.getTeamManager().removePlayerFromAllTeam(gameProfile);
                 evoGame.getGameProfileManager().getGameProfileMap().values().forEach(gameProfile -> gameProfile.getTeamSelectorGui().load());
             }));

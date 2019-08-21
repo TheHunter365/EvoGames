@@ -1,7 +1,7 @@
 package fr.evogames.evogamescore.game.profile.gui;
 
 import fr.evogames.evogamescore.game.Game;
-import fr.evogames.evogamescore.utils.evoInventory.EvoInvItem;
+import fr.evogames.evogamescore.utils.evoInventory.EvoInventoryItem;
 import fr.evogames.evogamescore.utils.evoInventory.EvoInventory;
 import fr.evogames.evogamescore.utils.ItemBuilder;
 import org.bukkit.ChatColor;
@@ -24,11 +24,11 @@ public class AdminGui {
     }
 
     public void load(){
-        inventory.setItem(12, new EvoInvItem(new ItemBuilder(Material.BLAZE_POWDER).setName(ChatColor.GREEN + "Démarrage").toItemStack(), event -> {
+        inventory.setItem(12, new EvoInventoryItem(new ItemBuilder(Material.BLAZE_POWDER).setName(ChatColor.GREEN + "Démarrage").toItemStack(), event -> {
             evoGame.getWaitingRoomManager().startRunnable();
             evoGame.getWaitingRoomManager().getStartTask().setTimeLeft(11);
         }));
-        inventory.setItem(13, new EvoInvItem(new ItemBuilder(Material.NETHERRACK).setName(ChatColor.RED + "STOP").toItemStack(), event -> {
+        inventory.setItem(13, new EvoInventoryItem(new ItemBuilder(Material.NETHERRACK).setName(ChatColor.RED + "STOP").toItemStack(), event -> {
             evoGame.getWaitingRoomManager().stopRunnable();
         }));
     }

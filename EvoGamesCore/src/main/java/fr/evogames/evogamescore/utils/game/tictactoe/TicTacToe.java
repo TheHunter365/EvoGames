@@ -1,6 +1,6 @@
 package fr.evogames.evogamescore.utils.game.tictactoe;
 
-import fr.evogames.evogamescore.utils.evoInventory.EvoInvItem;
+import fr.evogames.evogamescore.utils.evoInventory.EvoInventoryItem;
 import fr.evogames.evogamescore.utils.evoInventory.EvoInventory;
 import org.bukkit.DyeColor;
 import org.bukkit.entity.Player;
@@ -54,11 +54,11 @@ public class TicTacToe {
         return tttProfileList.stream().filter(ticTacToeProfile -> ticTacToeProfile.getPlayer().equals(player)).findFirst().orElse(null);
     }
 
-    public EvoInvItem getItem(int i){
+    public EvoInventoryItem getItem(int i){
         TicTacToeProfile itemTTTProfile = tttProfileList.stream().filter(ticTacToeProfiles -> grid[i] == ticTacToeProfiles.getId()).findFirst().orElse(null);
         ItemStack itemStack = itemTTTProfile != null ? new Wool(itemTTTProfile.getColor()).toItemStack() : new Wool(DyeColor.GRAY).toItemStack();
         itemStack.setAmount(1);
-        return new EvoInvItem(itemStack, event -> {
+        return new EvoInventoryItem(itemStack, event -> {
             if(event.getWhoClicked() instanceof Player) {
                 Player player = (Player) event.getWhoClicked();
                 TicTacToeProfile ticTacToeProfile = getProfile(player);
